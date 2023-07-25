@@ -37,7 +37,7 @@ final class RecaptchaType extends AbstractType
     /**
      * {@inheritdoc}
      */
-    public function buildView(FormView $view, FormInterface $form, array $options)
+    public function buildView(FormView $view, FormInterface $form, array $options): void
     {
         $view->vars = array_replace($view->vars, [
             'pr_recaptcha_public_key' => $this->publicKey,
@@ -51,7 +51,7 @@ final class RecaptchaType extends AbstractType
     /**
      * {@inheritdoc}
      */
-    public function configureOptions(OptionsResolver $resolver)
+    public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults([
             'label' => false,
@@ -71,7 +71,7 @@ final class RecaptchaType extends AbstractType
     /**
      * {@inheritdoc}
      */
-    public function getParent(): string
+    public function getParent(): ?string
     {
         return HiddenType::class;
     }
@@ -79,7 +79,7 @@ final class RecaptchaType extends AbstractType
     /**
      * {@inheritdoc}
      */
-    public function getBlockPrefix()
+    public function getBlockPrefix(): string
     {
         return 'pr_recaptcha';
     }

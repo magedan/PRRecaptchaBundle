@@ -53,7 +53,7 @@ final class ContainsRecaptchaValidator extends ConstraintValidator
      * @param mixed $value
      * @param Constraint $constraint
      */
-    public function validate($value, Constraint $constraint)
+    public function validate($value, Constraint $constraint): void
     {
         if (!$this->enabled) {
             return;
@@ -62,7 +62,7 @@ final class ContainsRecaptchaValidator extends ConstraintValidator
         if (!$constraint instanceof ContainsRecaptcha) {
             throw new UnexpectedTypeException($constraint, ContainsRecaptcha::class);
         }
-        
+
         if ($value === null) {
             $value = '';
         }

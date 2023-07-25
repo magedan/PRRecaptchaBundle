@@ -20,7 +20,7 @@ class ContainsRecaptcha extends Constraint
     /**
      * {@inheritdoc}
      */
-    public function validatedBy()
+    public function validatedBy(): string
     {
         return 'pr_recaptcha.valid';
     }
